@@ -83,7 +83,7 @@ end;"/>
           <Other>
             <CustomOptions Value="-dHEAPTRC -dHEAPTRC_EXTRA"/>
             <ExecuteBefore>
-              <Command Value="$(ProjPath)\platform\git2revisioninc$(ExeExt).cmd $MakeFile($(ProjOutDir))"/>
+              <Command Value="$MakeFile($(ProjPath)\platform\git2revisioninc$(ExeExt).cmd) $MakeFile($(ProjOutDir))"/>
               <CompileReasons Run="False"/>
             </ExecuteBefore>
           </Other>
@@ -126,7 +126,7 @@ end;"/>
           </Linking>
           <Other>
             <ExecuteBefore>
-              <Command Value="$(ProjPath)\platform\git2revisioninc$(ExeExt).cmd $MakeFile($(ProjOutDir))"/>
+              <Command Value="$MakeFile($(ProjPath)\platform\git2revisioninc$(ExeExt).cmd) $MakeFile($(ProjOutDir))"/>
               <CompileReasons Run="False"/>
             </ExecuteBefore>
           </Other>
@@ -215,7 +215,7 @@ end;"/>
             </Verbosity>
             <CustomOptions Value="-dNIGHTLY_BUILD"/>
             <ExecuteBefore>
-              <Command Value="$(ProjPath)\platform\git2revisioninc$(ExeExt).cmd $MakeFile($(ProjOutDir))"/>
+              <Command Value="$MakeFile($(ProjPath)\platform\git2revisioninc$(ExeExt).cmd) $MakeFile($(ProjOutDir))"/>
               <CompileReasons Run="False"/>
             </ExecuteBefore>
           </Other>
@@ -273,7 +273,7 @@ end;"/>
             </Verbosity>
             <CustomOptions Value="-dNIGHTLY_BUILD -dDARKWIN"/>
             <ExecuteBefore>
-              <Command Value="$(ProjPath)\platform\git2revisioninc$(ExeExt).cmd $MakeFile($(ProjOutDir))"/>
+              <Command Value="$MakeFile($(ProjPath)\platform\git2revisioninc$(ExeExt).cmd) $MakeFile($(ProjOutDir))"/>
               <CompileReasons Run="False"/>
             </ExecuteBefore>
           </Other>
@@ -2283,7 +2283,7 @@ end;"/>
         <Define0 Value="NoCocoaModernForm"/>
       </OtherDefines>
       <ExecuteBefore>
-        <Command Value="$(ProjPath)\platform\git2revisioninc$(ExeExt).cmd $MakeFile($(ProjOutDir))"/>
+        <Command Value="$MakeFile($(ProjPath)\platform\git2revisioninc$(ExeExt).cmd) $MakeFile($(ProjOutDir))"/>
         <CompileReasons Run="False"/>
       </ExecuteBefore>
     </Other>
