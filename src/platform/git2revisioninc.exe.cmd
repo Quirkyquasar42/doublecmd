@@ -3,6 +3,8 @@
 rem The output folder may arrive split at spaces (C:\GPT Review\...) or quoted: rebuild it from all arguments.
 set "OUTDIR=%*"
 set OUTDIR=%OUTDIR:"=%
+rem no trailing backslash: before a closing quote it would escape it
+if "%OUTDIR:~-1%"=="\" set "OUTDIR=%OUTDIR:~0,-1%"
 
 if not exist "%OUTDIR%" ( md "%OUTDIR%" )
 

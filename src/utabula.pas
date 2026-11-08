@@ -332,7 +332,7 @@ begin
   FPopup.Items.Clear;
   FPopup.Images := frmMain.mnuMain.Images;
   Mirror(frmMain.mnuMain.Items, FPopup.Items);
-  P := FButtons[TagMenu].ClientToScreen(Point(0, FButtons[TagMenu].Height));
+  P := FButtons[TagMenu].ClientToScreen(Classes.Point(0, FButtons[TagMenu].Height));
   FPopup.PopUp(P.X, P.Y);
 end;
 
