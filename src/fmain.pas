@@ -964,7 +964,7 @@ implementation
 {$R *.lfm}
 
 uses
-  Themes, uFileProcs, uShellContextMenu, fTreeViewMenu,
+  Themes, uFileProcs, uShellContextMenu, fTreeViewMenu, uTabula,
   Math, LCLIntf, Dialogs, uGlobs, uLng, uMasks, fCopyMoveDlg, uQuickViewPanel,
   uShowMsg, uDCUtils, uLog, uGlobsPaths, LCLProc, uOSUtils, uPixMapManager, LazUTF8,
   LazLogger, uDragDropEx, uKeyboard,
@@ -1276,6 +1276,9 @@ begin
   UpdateFreeSpace(fpRight, True);
 
   ThemeServices.OnThemeChange:= @AppThemeChange;
+
+  // inside Combined Windows Shell (--tabula): the shell's title bar and colors
+  TabulaAttach(Self);
 
 {$IF DEFINED(DARWIN)}
   TDarwinApplicationUtil.initServiceProvider( @OnNSServiceOpenWithNewTab, @NSServiceMenuIsReady, @NSServiceMenuGetFilenames );

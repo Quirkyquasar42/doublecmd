@@ -52,6 +52,20 @@ begin
   end;
 end;
 
+procedure ForceTabulaDark;
+{$IFDEF DARKWIN}
+var
+  Index: Integer;
+begin
+  // inside Combined Windows Shell (--tabula): menus, dialogs and scroll bars always dark, like the shell
+  for Index:= 1 to ParamCount do
+    if SameText(ParamStr(Index), '--tabula') then gAppMode:= 2; // pamForceDark
+end;
+{$ELSE}
+begin
+end;
+{$ENDIF}
+
 procedure Initialize;
 begin
   AConfig:= GetEarlyConfig;
@@ -73,6 +87,7 @@ begin
   except
     // Skip
   end;
+  ForceTabulaDark;
 end;
 
 procedure SaveEarlyConfig;

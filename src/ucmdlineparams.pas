@@ -42,7 +42,7 @@ procedure ProcessCommandLineParams;
 var
   Option: AnsiChar = #0;
   OptionIndex: LongInt = 0;
-  Options: array[1..5] of TOption;
+  Options: array[1..6] of TOption;
   OptionUnknown: String;
 begin
   FillChar(Options, SizeOf(Options), #0);
@@ -68,6 +68,10 @@ begin
   with Options[5] do
   begin
     Name:= 'no-splash';
+  end;
+  with Options[6] do
+  begin
+    Name:= 'tabula';   // inside Combined Windows Shell: handled by uTabula
   end;
   FillChar(CommandLineParams, SizeOf(TCommandLineParams), #0);
   repeat
@@ -99,6 +103,10 @@ begin
                 CommandLineParams.Servername:= ParamStrU(TrimQuotes(OptArg));
               end;
             5:
+              begin
+                CommandLineParams.NoSplash:= True;
+              end;
+            6:
               begin
                 CommandLineParams.NoSplash:= True;
               end;
