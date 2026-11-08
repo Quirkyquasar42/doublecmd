@@ -88,7 +88,7 @@ end;
 
 function ThemeFile: String;
 begin
-  Result := IncludeTrailingPathDelimiter(GetEnvironmentVariable('APPDATA')) +
+  Result := IncludeTrailingPathDelimiter(SysUtils.GetEnvironmentVariable('APPDATA')) +
             'CombinedWindowsShell' + PathDelim + 'theme.json';
 end;
 
